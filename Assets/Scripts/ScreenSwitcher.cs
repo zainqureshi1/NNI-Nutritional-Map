@@ -70,6 +70,7 @@ public class ScreenSwitcher : MonoBehaviour {
 		screen3ButtonsAnimate = true;
 		screen3ButtonsDeltaTime = 0.0f;
 		screen3ButtonsCanvas [index].alpha = 0.0f;
+		SwitchCameraBackground (true);
 	}
 
 	public void BackToScreen2() {
@@ -79,6 +80,7 @@ public class ScreenSwitcher : MonoBehaviour {
 		textBubbles.SetActive (false);
 		screen2.SetActive (true);
 		mapAnimator.CloseInteraction ();
+		SwitchCameraBackground (false);
 	}
 
 	public void ExitClicked() {
@@ -92,6 +94,10 @@ public class ScreenSwitcher : MonoBehaviour {
 		screen2ButtonsAnimate = true;
 		screen2ButtonsDeltaTime = 0.0f;
 		screen2ButtonsCanvas.alpha = 0.0f;
+	}
+
+	private void SwitchCameraBackground(bool colored) {
+		Camera.main.backgroundColor = colored ? new Color(190.0f/255.0f, 230.0f/255.0f, 238.0f/255.0f) : Color.white;
 	}
 
 	private void Exit() {

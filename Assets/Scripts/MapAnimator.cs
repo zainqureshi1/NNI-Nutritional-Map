@@ -38,7 +38,11 @@ public class MapAnimator : MonoBehaviour {
 		if (!interactive || animating) {
 			return false;
 		}
-		hideIndex = visibleProvince;
+		if (visibleProvince != index) {
+			hideIndex = visibleProvince;
+		} else {
+			hideIndex = -1;
+		}
 		visibleProvince = index;
 		showIndex = visibleProvince;
 		if (hideIndex >= 0 || showIndex >= 0) {
@@ -53,8 +57,8 @@ public class MapAnimator : MonoBehaviour {
 	}
 
 	public void CloseInteraction() {
-		interactive = false;
 		SelectProvince (-1);
+		interactive = false;
 	}
 
 }
