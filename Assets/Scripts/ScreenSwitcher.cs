@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,7 +55,7 @@ public class ScreenSwitcher : MonoBehaviour {
 	}
 
 	public void GoToScreen2() {
-		Invoke("ShowScreen2", 1.0f);
+		Invoke("ShowScreen2", 3.0f);
 	}
 
 	public void GoToScreen3(int index) {
